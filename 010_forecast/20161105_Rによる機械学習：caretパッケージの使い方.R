@@ -1,5 +1,5 @@
 
-# Rによる機械学習：caretパッケージの使い方  | Logics of Blue
+# Rによる機械学習：caretパッケージの使い方 | Logics of Blue
 # https://logics-of-blue.com/rによる機械学習：caretパッケージの使い方/
 # 2016年11月05日：新規作成
 # 2018年04月25日：コードを一部修正し、動作確認
