@@ -3,6 +3,7 @@
 # http://logics-of-blue.com/svm-concept/
 # 2017年7月24日：新規作成
 # 2018年04月25日：コードを一部修正し、動作確認
+# 2018年06月20日：サポートベクトル回帰のコードを修正
 # 馬場真哉
 
 
@@ -197,7 +198,6 @@ svm_air <- ksvm(
   Ozone ~ Temp,
   data=airquality,
   epsilon=0.25,
-  type="C-svc",
   kernel="rbfdot",
   kpar=list(sigma=1),
   C=2
