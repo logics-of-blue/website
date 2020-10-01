@@ -23,7 +23,7 @@ is.jholiday <- function(target_date,
   target_date <- as.Date(target_date)
   
   # holiday_sourceをもとに祝日を取得
-  holidays <- read.csv(holiday_source)
+  holidays <- read.csv(holiday_source, fileEncoding = "CP932")
   colnames(holidays) <- c("date", "holyday_name")
   holidays$date <- as.Date(holidays$date)
 
