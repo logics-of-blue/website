@@ -1,5 +1,6 @@
 is.jholiday <- function(target_date, 
                         holiday_source = "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+                        encoding = "CP932",
                         excluded_days = NULL,
                         flag = FALSE) {
   # 日本の祝日を判定する関数。
@@ -11,6 +12,7 @@ is.jholiday <- function(target_date,
   #   target_date     : 祝日判定の対象となる日付のベクトル
   #   holiday_source  : 祝日判定の根拠となる祝日データ
   #                     1列目が祝日の日付、2列目が祝日の名称
+  #   encoding        : ファイルの文字コードを指定する文字列
   #   excluded_days   : 除外する曜日のベクトル。その曜日は決して祝日とみなされない
   #                     「月・火・水・木・金・土・日」のいずれかを指定する
   #   flag            : TRUEなら、0または1の数値型のベクトルを返す
@@ -23,7 +25,7 @@ is.jholiday <- function(target_date,
   target_date <- as.Date(target_date)
   
   # holiday_sourceをもとに祝日を取得
-  holidays <- read.csv(holiday_source)
+  holidays <- read.csv(holiday_source, fileEncoding = encoding)
   colnames(holidays) <- c("date", "holyday_name")
   holidays$date <- as.Date(holidays$date)
 
